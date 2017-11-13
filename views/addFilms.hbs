@@ -1,0 +1,40 @@
+<form method="post" action="/addSession">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label>Hall</label>
+        <select name="hall" class="form-control custom-select" required>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" class="form-control" placeholder="Price" name="price" required>
+    </div>
+    <div class="form-group">
+        <label>Duration</label>
+        <input type="text" class="form-control" placeholder="Duration" name="duration" required>
+    </div>
+    <div class="form-group">
+        <label for="">Time</label>
+        <select name="time" id="time" class="form-control custom-select">
+            <option value="11.30">11.30</option>
+            <option value="13.30">13.30</option>
+            <option value="15.30">15.30</option>
+            <option value="17.30">17.30</option>
+            <option value="19.30">19.30</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Cashiers</label>
+        <select class="js-example-basic-multiple select-cashier" name="cashiers[]" multiple="multiple" required>
+                {{#each cashier }}
+                <option value="{{this.id}}">{{this.username}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

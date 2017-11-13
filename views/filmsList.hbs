@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Hall</th>
+        <th>Time</th>
+        <th>Show</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{# each films}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.hall}}</td>
+            <td>{{this.time}}</td>
+            <td>
+                <form action="/show" method="get">
+                    <input type="hidden" name="name" value="{{this.name}}">
+                    <input type="hidden" name="hall" value="{{this.hall}}">
+                    <input type="hidden" name="time" value="{{this.time}}">
+                    <input type="submit" class="btn btn-primary" value="Show">
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
